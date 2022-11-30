@@ -2,6 +2,10 @@
 
 RCTN Hotels merupakan aplikasi pemesanan hotel.
 
+## Preview
+![Designstripe_ Dual iPhone 14, Floating](https://user-images.githubusercontent.com/77148705/204692074-2f301031-b585-4109-8e3c-a5083cd6c43b.png)
+
+
 ## Tech Stack
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)

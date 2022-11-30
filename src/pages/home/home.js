@@ -41,12 +41,6 @@ export default Home = ({ navigation }) => {
           max_results: 7,
         },
       });
-
-      const sugestionHotels = {
-        title: "POPULAR HOTELS",
-        items: response.data.getHotelAutoSuggestV2.results.result.hotels,
-      };
-      setFeeds([sugestionHotels]);
     } catch (e) {
       // e
     }

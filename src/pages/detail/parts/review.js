@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     width: "100%",
     minHeight: 150,
     padding: 10,
-    paddingBottom: 20,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",

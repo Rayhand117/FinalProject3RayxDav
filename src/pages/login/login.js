@@ -48,7 +48,7 @@ export default Login = ({ navigation }) => {
       </View>
       <View style={styles.sectionForm}>
         <Input
-          placeholder="Email"
+          placeholder="user@gmail.com"
           autoComplete="email"
           onChangeText={(e) => setEmail(e)}
           leftIcon={
@@ -57,7 +57,7 @@ export default Login = ({ navigation }) => {
           errorMessage={isError && "Username or password is wrong"}
         />
         <Input
-          placeholder="Password"
+          placeholder="password123"
           onChangeText={(e) => setPassword(e)}
           secureTextEntry={isVisiblePassword ? false : true}
           leftIcon={

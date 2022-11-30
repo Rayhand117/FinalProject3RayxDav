@@ -6,8 +6,12 @@ import { Button } from "react-native-elements";
 
 export default ItemFilter = ({
   setInputCity,
+  setInputStartDate,
+  setInputEndDate,
   handleConfirmSearch,
   inputCity,
+  inputStartDate,
+  inputEndDate,
 }) => {
   return (
     <View style={[styles.container, styles.boxShadow]}>
@@ -58,6 +62,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.3,
     shadowRadius: 4.65,
+
     elevation: 8,
   },
   dateContainer: {
