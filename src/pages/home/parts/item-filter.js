@@ -1,17 +1,11 @@
-import { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
-import DatePicker from "react-native-datepicker";
 import { SearchBar } from "react-native-elements";
 import { Button } from "react-native-elements";
 
 export default ItemFilter = ({
   setInputCity,
-  setInputStartDate,
-  setInputEndDate,
   handleConfirmSearch,
   inputCity,
-  inputStartDate,
-  inputEndDate,
 }) => {
   return (
     <View style={[styles.container, styles.boxShadow]}>
@@ -64,19 +58,5 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
 
     elevation: 8,
-  },
-  dateContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  datePicker: {
-    width: 190,
-    borderWidth: 0,
-    backgroundColor: "#fff",
-    marginTop: 10,
-    padding: 2,
-    borderRadius: 7,
   },
 });

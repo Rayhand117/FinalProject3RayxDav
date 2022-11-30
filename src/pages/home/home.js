@@ -1,6 +1,5 @@
 import { StyleSheet, ScrollView, View } from "react-native";
 import ItemFilter from "./parts/item-filter";
-import Feed from "./parts/feed";
 import ItemCard from "../../components/itemCard";
 import { useEffect, useState } from "react";
 import http from "../../service/http";
@@ -8,7 +7,6 @@ import dayjs from "dayjs";
 import {
   SEARCH_HOTEL,
   SEARCH_LOCATION,
-  GET_HOTEL_SUGESTION,
 } from "../../service/api-path";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -27,28 +25,12 @@ export default Home = ({ navigation }) => {
   const favoriteHotels = useSelector((state) => state.hotels.hotels.favorites);
 
   const [inputCity, setInputCity] = useState("Yogyakarta");
-  const [inputStartDate, setInputStartDate] = useState(TODAY);
-  const [inputEndDate, setInputEndDate] = useState(TODAY);
+  const [Date, setDate] = useState(TODAY);
+  const [Tanggal, setTanggal] = useState(TODAY);
   const [hotels, setHotels] = useState([]);
-  const [feeds, setFeeds] = useState([]);
-
-  const getHotelSugestion = async () => {
-    try {
-      const response = await http.get(GET_HOTEL_SUGESTION, {
-        params: {
-          string: inputCity,
-          get_hotels: true,
-          max_results: 7,
-        },
-      });
-    } catch (e) {
-      // e
-    }
-  };
 
   const handleConfirmSearch = () => {
     searchCity();
-    getHotelSugestion();
   };
 
   const searchCity = async () => {
@@ -74,9 +56,9 @@ export default Home = ({ navigation }) => {
     try {
       const response = await http.get(SEARCH_HOTEL, {
         params: {
-          date_checkin: inputStartDate,
+          date_checkin: Date,
           location_id: cityId,
-          date_checkout: inputEndDate,
+          date_checkout: Tanggal,
           sort_order: "STAR",
         },
       });
@@ -109,7 +91,6 @@ export default Home = ({ navigation }) => {
   };
 
   useEffect(() => {
-    getHotelSugestion();
     searchCity();
   }, []);
 
@@ -117,19 +98,9 @@ export default Home = ({ navigation }) => {
     <ScrollView style={styles.container}>
       <ItemFilter
         setInputCity={setInputCity}
-        setInputStartDate={setInputStartDate}
-        setInputEndDate={setInputEndDate}
         handleConfirmSearch={handleConfirmSearch}
         inputCity={inputCity}
-        inputStartDate={inputStartDate}
-        inputEndDate={inputEndDate}
       />
-      <View style={{ marginBottom: 20 }}>
-        {feeds &&
-          feeds.map((feed, idx) => (
-            <Feed key={idx} title={feed.title} items={feed.items} />
-          ))}
-      </View>
       <View style={{ marginBottom: 20 }}>
         {hotels &&
           hotels.map((hotel) => (

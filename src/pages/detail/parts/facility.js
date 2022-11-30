@@ -3,11 +3,10 @@ import { Ionicons } from "@expo/vector-icons";
 
 const facilitiesIcon = {
   PARKING: "car",
-  INTERNET: "wifi",
-  RESTAURANT: "restaurant",
-  SMOKING: "logo-no-smoking",
   HEALTH: "fitness",
+  RESTAURANT: "restaurant",
   FITNESS: "bicycle",
+  SMOKING: "logo-no-smoking",
 };
 
 export default Facility = ({ type }) => {
