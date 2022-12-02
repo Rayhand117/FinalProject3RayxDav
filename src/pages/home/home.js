@@ -94,6 +94,10 @@ export default Home = ({ navigation }) => {
     searchCity();
   }, []);
 
+  // hotels.map((hotel) => (
+  //   console.log("Hotel di", hotel.location.address.cityName.split(" ").pop())
+  // ))
+
   return (
     <ScrollView style={styles.container}>
       <ItemFilter

@@ -23,7 +23,7 @@ http.interceptors.response.use(
     return parseResponse(response);
   },
   (error) => {
-    // e console.log("WHOOPS")
+    console.log("API EXPIRED")
   }
 );
 

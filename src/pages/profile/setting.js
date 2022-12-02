@@ -91,9 +91,9 @@ export default Setting = ({ navigation }) => {
           phoneNumber: "",
         })
       );
-      dispatch(SET_AUTHENTICATED(false));
       dispatch(REMOVE_ALL_FAVORITED_HOTEL(true))
       dispatch(REMOVE_ALL_ORDERED_HOTEL(true))
+      dispatch(SET_AUTHENTICATED(false));
     } else {
       navigation.navigate("Login");
     }
