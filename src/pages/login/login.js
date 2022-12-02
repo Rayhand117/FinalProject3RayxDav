@@ -86,7 +86,6 @@ export default Login = ({ navigation }) => {
             marginVertical: 10,
           }}
         />
-        <Text>Forgot your password?</Text>
       </View>
     </View>
   );

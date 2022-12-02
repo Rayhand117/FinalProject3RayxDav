@@ -23,7 +23,7 @@ http.interceptors.response.use(
     return parseResponse(response);
   },
   (error) => {
-    // e
+    // e console.log("WHOOPS")
   }
 );
 

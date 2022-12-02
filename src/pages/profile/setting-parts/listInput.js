@@ -28,7 +28,7 @@ export default ListInput = ({
       <ListItem bottomDivider containerStyle={{ padding: 5 }}>
         <ListItem.Content style={styles.inputEdit}>
           <TextInput
-            placeholder="First name"
+            placeholder="Tuliskan"
             onChangeText={(e) => setData({ ...data, value: e })}
             style={styles.textInput}
             value={data.value}

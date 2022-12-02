@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ToastAndroid,
+  ScrollView,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { useDispatch, useSelector } from "react-redux";
@@ -81,7 +82,7 @@ export default Booking = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <View style={{ padding: 20 }}>
+      <ScrollView style={{ padding: 20 }}>
         <Text style={styles.textTitle}>CONTACT INFORMATIONS</Text>
         <Text style={styles.textLabel}>Full name</Text>
         <TextInput
@@ -141,11 +142,13 @@ export default Booking = ({ navigation, route }) => {
             <Text style={styles.textPrice}>$ {totalPayment()}</Text>
           </View>
         </View>
-        <Text style={[styles.textLabel, { color: "#e30000" }]}>
-          * Biodata in this form will be used for check in identity. And by
-          default use your account profile
-        </Text>
-      </View>
+        <View style={styles.theBottom}>
+          <Text style={[styles.textLabel, { color: "#e30000" }]}>
+            * Biodata in this form will be used for check in identity. And by
+            default use your account profile
+          </Text>
+        </View>
+      </ScrollView>
       <TouchableOpacity
         style={styles.floatingButton}
         onPress={() => handlePressBooking()}
@@ -171,6 +174,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#489687",
     borderTopRightRadius: 7,
     borderTopLeftRadius: 7,
+    marginTop: 65
   },
   bookButtonText: {
     color: "#fff",
@@ -234,5 +238,9 @@ const styles = StyleSheet.create({
   textLabel: {
     fontWeight: "bold",
     marginTop: 11,
+  },
+  theBottom: {
+    marginBottom: 65,
+    paddingBottom: 35
   },
 });

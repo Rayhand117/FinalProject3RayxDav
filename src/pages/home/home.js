@@ -1,14 +1,14 @@
 import { StyleSheet, ScrollView, View } from "react-native";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ItemFilter from "./parts/item-filter";
 import ItemCard from "../../components/itemCard";
-import { useEffect, useState } from "react";
 import http from "../../service/http";
 import dayjs from "dayjs";
 import {
   SEARCH_HOTEL,
   SEARCH_LOCATION,
 } from "../../service/api-path";
-import { useDispatch, useSelector } from "react-redux";
 import {
   ADD_FAVORITE_HOTEL,
   REMOVE_FAVORITE_HOTEL,

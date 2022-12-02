@@ -7,6 +7,11 @@ import { SET_AUTHENTICATED, SET_USER } from "../../store/slicers/user";
 import ListGender from "./setting-parts/listGender";
 import ListInput from "./setting-parts/listInput";
 import ListPhone from "./setting-parts/listPhone";
+import {
+  ADD_FAVORITE_HOTEL,
+  REMOVE_ALL_FAVORITED_HOTEL,
+  REMOVE_ALL_ORDERED_HOTEL,
+} from "../../store/slicers/hotels";
 
 const GENDER_OPTIONS = ["Male", "Women"];
 
@@ -83,10 +88,12 @@ export default Setting = ({ navigation }) => {
           lastName: "",
           email: "",
           gender: "",
-          phone: "",
+          phoneNumber: "",
         })
       );
       dispatch(SET_AUTHENTICATED(false));
+      dispatch(REMOVE_ALL_FAVORITED_HOTEL(true))
+      dispatch(REMOVE_ALL_ORDERED_HOTEL(true))
     } else {
       navigation.navigate("Login");
     }
